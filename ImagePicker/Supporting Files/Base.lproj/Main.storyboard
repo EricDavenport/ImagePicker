@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Images View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ImagesViewController" customModule="ImagePicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dZM-bj-tVk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vap-HT-dob">
+                                    <size key="itemSize" width="266" height="280"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="Zs2-oi-Rfl" customClass="ImageCell" customModule="ImagePicker" customModuleProvider="target">
+                                        <rect key="frame" x="74" y="0.0" width="266" height="280"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qsm-fS-b69">
+                                            <rect key="frame" x="0.0" y="0.0" width="266" height="280"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jti-u1-GRC">
+                                                    <rect key="frame" x="0.0" y="1" width="266" height="277.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="jti-u1-GRC" secondAttribute="bottom" id="3wa-2I-16m"/>
+                                                <constraint firstItem="jti-u1-GRC" firstAttribute="leading" secondItem="qsm-fS-b69" secondAttribute="leading" id="9KH-ie-oBA"/>
+                                                <constraint firstItem="jti-u1-GRC" firstAttribute="top" secondItem="qsm-fS-b69" secondAttribute="top" id="B34-Mn-gbY"/>
+                                                <constraint firstAttribute="trailing" secondItem="jti-u1-GRC" secondAttribute="trailing" id="lZ6-Vh-dpN"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="266" height="280"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="jti-u1-GRC" id="NIC-i4-cdd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNG-1v-BR6">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="k6w-b2-Q06"/>
+                                    <barButtonItem title="Item" image="plus" catalog="system" id="gR4-Cx-yfF">
+                                        <connections>
+                                            <action selector="addPictureButtonPressed:" destination="BYZ-38-t0r" id="Dqt-LB-07g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FPG-hK-Q7r"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dZM-bj-tVk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0yi-Ef-DSd"/>
+                            <constraint firstItem="oNG-1v-BR6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4qp-bc-ibL"/>
+                            <constraint firstItem="dZM-bj-tVk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="R65-1F-u4A"/>
+                            <constraint firstItem="oNG-1v-BR6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Y51-b4-CQJ"/>
+                            <constraint firstItem="oNG-1v-BR6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="icY-t0-jYN"/>
+                            <constraint firstItem="oNG-1v-BR6" firstAttribute="top" secondItem="dZM-bj-tVk" secondAttribute="bottom" symbolic="YES" id="wLC-8N-eyt"/>
+                            <constraint firstItem="dZM-bj-tVk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x15-7W-ven"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="dZM-bj-tVk" id="KpD-ur-qOr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
